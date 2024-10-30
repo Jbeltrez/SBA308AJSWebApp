@@ -1,8 +1,9 @@
-
-const API_KEY = "live_PwQyLmNZR9H9elcnOZ7A8Dr9ib54diZy9wt75CtLd6ntVJmt6swh2ww5qseKB7QU";
-
-const URL = `https://api.thedogapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=${API_KEY}`
-
-
-
-
+export async function fetchData() { 
+    try {
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=149")
+        if (response.status !== 200) throw new Error(); 
+        return response.data; 
+    } catch(e) { 
+        console.error("Error" + e); 
+    }
+}

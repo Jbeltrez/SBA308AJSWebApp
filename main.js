@@ -1,19 +1,22 @@
+import {fetchData} from "./fetch.js"
 
-const API_KEY = "live_PwQyLmNZR9H9elcnOZ7A8Dr9ib54diZy9wt75CtLd6ntVJmt6swh2ww5qseKB7QU";
-
-const URL = `https://api.thedogapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=${API_KEY}`
-
-const BASE_URL = 'https://api.thedogapi.com/v1/'
+const data = await fetchData();
 
 const button = document.querySelector(".btn"); 
+const testContainer = document.querySelector('.test'); 
 
-const dogInput = document.querySelector("#breed");
+const pokeInput = document.querySelector("#breed");
 
-button.addEventListener('click', async () => {
-    let dog = dogInput.value; 
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    // let poke = pokeInput.value; 
     try { 
-        let response = await axios.get(`${BASE_URL}`)
-        console.log(response.data);
+        let response = await axios.get(URL);
+
+        console.log(response);
+        if(response.status !== 200) throw new Error(); 
+        
     } catch(e) {
         console.log(e); 
     }
