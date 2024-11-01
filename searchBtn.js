@@ -7,6 +7,8 @@ export async function searchBtn() {
     const button = document.querySelector(".btn"); 
     const testContainer = document.querySelector('.test'); 
     const pokeList = document.querySelector(".pokeList")
+    let dropdown = document.querySelector("#pokelist")
+
     // const pokeInput = document.querySelector("#breed");
     // button.addEventListener('click', (e) => {
     //     e.preventDefault();
@@ -16,6 +18,10 @@ export async function searchBtn() {
         for (let i = 0; i < pokeArr.length; i++) { 
             // console.log(pokeArr[i]); 
             let newPoke = document.createElement("p"); 
+            let pokeListAddition = document.createElement("option"); 
+            pokeListAddition.value = `${pokeArr[i].name}`; 
+            pokeListAddition.innerHTML = pokeArr[i].name; 
+            dropdown.appendChild(pokeListAddition); 
             newPoke.classList = "poke"
             newPoke.innerHTML = pokeArr[i].name;
             testContainer.appendChild(newPoke);
@@ -44,3 +50,9 @@ export async function searchBtn() {
     
     // })
 }
+
+let searchedPoke = document.querySelector(".searchedPoke"); 
+
+const button = document.querySelector(".btn");
+
+button.addEventListener("click", )

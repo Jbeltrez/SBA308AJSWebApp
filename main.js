@@ -5,3 +5,4 @@ const data = await fetchData();
 
 const render = await searchBtn(); 
 const img = await pokeImgCall(); 
+
