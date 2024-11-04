@@ -12,6 +12,7 @@ export async function pokeImgCall(obj) {
         sprite.setAttribute('src', src); 
         let searchedPoke = document.querySelector(".searchedPoke"); 
         searchedPoke.innerHTML = ""
+        sprite.setAttribute('class', 'selectedpoke')
         searchedPoke.appendChild(sprite);
         return response.data; 
     } catch(e) { 

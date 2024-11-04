@@ -17,7 +17,22 @@ body {
 
   }
 .searchedPoke {
-    border: 5px solid black;
+    /* border: 5px solid black; */
+    /* margin: 100px; */
+    display: flex;
+    justify-content: center;
+    
+}
+.selectedpoke {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    align-items: stretch;
+    padding: 0px;
+    /* justify-content: center; */
+    border: solid black;
+    border-radius: 150px;
+    background-color: pink;
 }
 .poke { 
     color: white;
