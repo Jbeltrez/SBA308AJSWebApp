@@ -1,6 +1,7 @@
 import {fetchData} from "./fetch.js"
-
+import { pokeImgCall } from "./pokeImgCall.js";
 const data = await fetchData();
+
 
 
 export async function searchBtn() {
@@ -51,8 +52,15 @@ export async function searchBtn() {
     // })
 }
 
-let searchedPoke = document.querySelector(".searchedPoke"); 
 
+let selection = document.querySelector("#pokelist")
 const button = document.querySelector(".btn");
-
-button.addEventListener("click", )
+// let selected = pokeImgCall(selection.value); 
+button.addEventListener("click", (event) => {
+    // let selection = document.querySelector("#pokelist")
+    // this.target
+    // event.preventDefault()
+    // let selected = pokeImgCall(selection.value); 
+    pokeImgCall(selection.value); 
+    // console.log(selected)
+})
